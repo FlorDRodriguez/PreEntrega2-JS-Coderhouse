@@ -1,7 +1,7 @@
 const IVA = 0.21;
 const porcentajeDescuento = 0.15;
-const porcentajeRec3 = 0.10;
-const porcentajeRec6 = 0.25;
+const porcentaje3Cuotas = 0.10;
+const porcentaje6Cuotas = 0.25;
 let seguirComprando = false;
 let totalCompra = 0;
 
@@ -82,16 +82,16 @@ do {
                 if (cantidad > 0) { 
                     totalCompra += calcularSubtotal(cantidad, productoSeleccionado.precio); 
                 } else { 
-                    alert("Cantidad no válida."); 
+                    alert("Cantidad inválida."); 
                 } 
             } else { 
-                alert("Opción de producto no válida.");
+                alert("Opción de producto inválida.");
             } 
         } else { 
-            alert("Opción de subcategoría no válida."); 
+            alert("Opción de subcategoría inválida."); 
         }
     } else { 
-        alert("Opción de categoría general no válida.");
+        alert("Opción de categoría general inválida.");
     };
 
     seguirComprando = confirm("¿Desea seguir comprando?");
@@ -136,11 +136,11 @@ function PagoCredito(total) {
             alert(`Pagando en 1 cuota no tiene recargo. El total de la compra es $${total.toFixed(2)}`); 
             break; 
         case "2": 
-            const recargo3 = total + (total * porcentajeRec3); 
+            const recargo3 = total + (total * porcentaje3Cuotas); 
             alert(`Pagando en 3 cuotas tiene el 10% de recargo. El total de la compra es 3 cuotas de $${(recargo3 / 3).toFixed(2)} c/u`); 
             break; 
         case "3": 
-            const recargo6 = total + (total * porcentajeRec6); 
+            const recargo6 = total + (total * porcentaje6Cuotas); 
             alert(`Pagando en 6 cuotas tiene el 25% de recargo. El total de la compra es 6 cuotas de $${(recargo6 / 6).toFixed(2)} c/u`); 
             break; 
         default: 
